@@ -24,11 +24,11 @@ public class MemoryGame {
         long startWatch = System.currentTimeMillis();
         if (gameSize.equals("1")){
             gameSizeInt = 4;
-            game(upDown, wordsEasy, startWatch, gameSizeInt); // calls the game
+            game(upDown, wordsEasy, startWatch, gameSizeInt);
         }
         else{
             gameSizeInt = 8;
-            game(upDown, wordsHard, startWatch, gameSizeInt); // calls the game
+            game(upDown, wordsHard, startWatch, gameSizeInt);
         }
     }
 
@@ -39,8 +39,7 @@ public class MemoryGame {
         return s.next();
     }
 
-    //print the board
-    public static void setup(String gameSize) {
+        public static void setup(String gameSize) {
 
         for (int i = 0; i < 4; i++) {
             for (int a = 0; a < 4; a++) {
@@ -49,13 +48,13 @@ public class MemoryGame {
         }
 
         if (gameSize.equals("1")){
-            wordsEasy = randomizer(gameSize); //Shuffle cards
+            wordsEasy = randomizer(gameSize);
         }
         else
-            wordsHard = randomizer(gameSize); //Shuffle cards
+            wordsHard = randomizer(gameSize);
     }
 
-    //print the board
+
     public static void displayBoard(boolean[][] upDown, String[][] cards, int lifes, int gameSize) {
 
         System.out.println("-------------");
@@ -123,7 +122,7 @@ public class MemoryGame {
 
         indexes = new ArrayList<>();
         String[][] cards = new String[t/2][4];
-        for (int r = 0; r < t/2; r++) // Cards receive Numbers
+        for (int r = 0; r < t/2; r++)
         {
             for (int s = 0; s < 4; s++) {
                 int index = random.nextInt(wordsForGame.size());
@@ -137,7 +136,7 @@ public class MemoryGame {
         return cards;
     }
 
-    //Start the Game
+
     public static void game(boolean[][] upDown, String[][] cards, long startWatch, int gameSize) {
         int noDownCards = 2*gameSize;
         int lifes;
@@ -200,11 +199,11 @@ public class MemoryGame {
 
             if (gameSize2.equals("1")){
                 gameSizeInt = 4;
-                game(upDown, wordsEasy, startWatch, gameSizeInt); // calls the game
+                game(upDown, wordsEasy, startWatch, gameSizeInt);
             }
             else{
                 gameSizeInt = 8;
-                game(upDown, wordsHard, startWatch, gameSizeInt); // calls the game
+                game(upDown, wordsHard, startWatch, gameSizeInt);
             }
         } else
             System.out.println("BYE BYE");
